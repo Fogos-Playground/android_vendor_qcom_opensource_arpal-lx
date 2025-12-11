@@ -388,7 +388,7 @@ int32_t SoundTriggerEngineGsl::StartBuffering(Stream *s) {
                 ATRACE_ASYNC_END("stEngine: read FTRT data", (int32_t)module_type_);
                 kw_transfer_latency_ = std::chrono::duration_cast<std::chrono::milliseconds>(
                     kw_transfer_end - kw_transfer_begin).count();
-                PAL_INFO(LOG_TAG, "FTRT data read done! total_read_size %zu, ftrt_size %zu, read latency %llums",
+                PAL_INFO(LOG_TAG, "FTRT data read done! total_read_size %zu, ftrt_size %u, read latency %llums",
                         total_read_size, ftrt_size, (long long)kw_transfer_latency_);
 
                 if (!IS_MODULE_TYPE_PDK(module_type_)) {
